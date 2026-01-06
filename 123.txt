@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清朝歷史探索 - 數位學習網</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Noto+Serif+TC', serif;
+            background-color: #fdfaf6;
+            color: #2d2d2d;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1599571234909-29ed5d13c1d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .emperor-table tr:nth-child(even) {
+            background-color: #f8f1e7;
+        }
+
+        .quiz-container {
+            background-color: #ffffff;
+            border: 2px solid #c0a16b;
+            border-radius: 12px;
+        }
+
+        .btn-gold {
+            background-color: #c0a16b;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #a08455;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Hero -->
+    <header class="hero-gradient h-64 flex items-center justify-center text-center text-white px-4">
+        <div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">清朝歷史數位學習網</h1>
+            <p class="text-lg opacity-90">探索大清二百六十八年的輝煌與變革</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        
+        <!-- Tab Navigation -->
+        <nav class="flex flex-wrap justify-center gap-4 mb-12">
+            <button onclick="showSection('emperors')" class="px-6 py-2 rounded-full border-2 border-[#c0a16b] text-[#c0a16b] font-bold hover:bg-[#c0a16b] hover:text-white transition">歷代皇帝</button>
+            <button onclick="showSection('culture')" class="px-6 py-2 rounded-full border-2 border-[#c0a16b] text-[#c0a16b] font-bold hover:bg-[#c0a16b] hover:text-white transition">文化藝術</button>
+            <button onclick="showSection('diet')" class="px-6 py-2 rounded-full border-2 border-[#c0a16b] text-[#c0a16b] font-bold hover:bg-[#c0a16b] hover:text-white transition">飲食文化</button>
+            <button onclick="showSection('currency')" class="px-6 py-2 rounded-full border-2 border-[#c0a16b] text-[#c0a16b] font-bold hover:bg-[#c0a16b] hover:text-white transition">幣制系統</button>
+            <button onclick="showSection('quiz')" class="px-6 py-2 rounded-full bg-[#c0a16b] text-white font-bold hover:bg-[#a08455] transition">知識測驗</button>
+        </nav>
+
+        <!-- Section: Emperors -->
+        <section id="emperors" class="content-section">
+            <h2 class="text-3xl font-bold mb-6 border-b-4 border-[#c0a16b] inline-block">歷代皇帝一覽</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left emperor-table border-collapse">
+                    <thead>
+                        <tr class="bg-[#c0a16b] text-white">
+                            <th class="p-3">年號</th>
+                            <th class="p-3">廟號</th>
+                            <th class="p-3">統治重點與貢獻</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="p-3 font-bold">天命</td><td class="p-3">太祖 (努爾哈赤)</td><td class="p-3">建立後金，創立八旗制度。</td></tr>
+                        <tr><td class="p-3 font-bold">崇德</td><td class="p-3">太宗 (皇太極)</td><td class="p-3">改國號大清，定族名為滿洲。</td></tr>
+                        <tr><td class="p-3 font-bold">順治</td><td class="p-3">世祖</td><td class="p-3">入關第一位皇帝，推行滿漢一體。</td></tr>
+                        <tr><td class="p-3 font-bold">康熙</td><td class="p-3">聖祖</td><td class="p-3">在位61年，奠定康乾盛世。</td></tr>
+                        <tr><td class="p-3 font-bold">雍正</td><td class="p-3">世宗</td><td class="p-3">嚴謹改革，設軍機處，攤丁入畝。</td></tr>
+                        <tr><td class="p-3 font-bold">乾隆</td><td class="p-3">高宗</td><td class="p-3">清朝巔峰，編纂四庫全書。</td></tr>
+                        <tr><td class="p-3 font-bold">道光</td><td class="p-3">宣宗</td><td class="p-3">遭遇鴉片戰爭，清朝轉折點。</td></tr>
+                        <tr><td class="p-3 font-bold">光緒</td><td class="p-3">德宗</td><td class="p-3">推行戊戌變法，不幸被軟禁。</td></tr>
+                        <tr><td class="p-3 font-bold">宣統</td><td class="p-3">溥儀</td><td class="p-3">末代皇帝，1912年辛亥革命後退位。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section: Culture -->
+        <section id="culture" class="content-section hidden">
+            <h2 class="text-3xl font-bold mb-6 border-b-4 border-[#c0a16b] inline-block">文化藝術</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-3 text-[#c0a16b]">學術與思想</h3>
+                    <p class="leading-relaxed">因文字獄高壓，學子轉向研究古籍，形成「考據學」（乾嘉學派）。</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-3 text-[#c0a16b]">文學巔峰</h3>
+                    <p class="leading-relaxed">《紅樓夢》成為中國古典小說的集大成者；崑曲與京劇（由徽班進京發展）成為主流娛樂。</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-3 text-[#c0a16b]">皇家園林</h3>
+                    <p class="leading-relaxed">圓明園與避暑山莊展現了融合滿漢蒙藏風格的精湛建築技術。</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-3 text-[#c0a16b]">滿漢融合</h3>
+                    <p class="leading-relaxed">剃髮易服與科舉制度並行，展現了征服者與被征服文化間的調和。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Diet -->
+        <section id="diet" class="content-section hidden">
+            <h2 class="text-3xl font-bold mb-6 border-b-4 border-[#c0a16b] inline-block">飲食文化</h2>
+            <div class="bg-white p-8 rounded-lg shadow-sm border-l-8 border-[#c0a16b]">
+                <ul class="space-y-4">
+                    <li><strong class="text-lg">滿漢全席：</strong> 融合滿漢風格的高級宴席，結合燒烤與精緻烹調，多達百餘道菜。</li>
+                    <li><strong class="text-lg">滿族特色：</strong> 薩其馬、餑餑等麵點，以及冬季最受歡迎的火鍋文化。</li>
+                    <li><strong class="text-lg">茶館文化：</strong> 北京茶館興盛，成為社交與討論國事的重要場所。</li>
+                    <li><strong class="text-lg">辣椒傳入：</strong> 辣椒在清初傳入並普及，奠定了現代川菜與湘菜的基礎。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section: Currency -->
+        <section id="currency" class="content-section hidden">
+            <h2 class="text-3xl font-bold mb-6 border-b-4 border-[#c0a16b] inline-block">幣制系統</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 border-2 border-dashed border-[#c0a16b] rounded-lg">
+                    <h3 class="font-bold text-xl mb-2">銀兩 (秤量貨幣)</h3>
+                    <p>用於大額交易。並非統一鑄造，需鑑定成色並秤重（兩、錢、分）。</p>
+                </div>
+                <div class="p-6 border-2 border-dashed border-[#c0a16b] rounded-lg">
+                    <h3 class="font-bold text-xl mb-2">制錢 (銅幣)</h3>
+                    <p>用於日常小額交易。圓形方孔，鑄有皇帝年號，基本單位為「文」。</p>
+                </div>
+            </div>
+            <p class="mt-6 text-gray-600 italic">晚清時期，開始引進機器鑄造銀元（如龍洋）與銅板，並出現官發紙幣。</p>
+        </section>
+
+        <!-- Section: Quiz -->
+        <section id="quiz" class="content-section hidden">
+            <div class="quiz-container p-6 md:p-10 max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4 text-center">清朝知識挑戰賽</h2>
+                <p class="text-center text-gray-600 mb-8">測試您對清朝歷史的了解程度！</p>
+                
+                <div id="quiz-content">
+                    <!-- Questions will be injected here by JS -->
+                </div>
+
+                <div id="quiz-result" class="hidden text-center">
+                    <h3 class="text-2xl font-bold mb-4">測驗結束！</h3>
+                    <p id="score-text" class="text-4xl font-bold text-[#c0a16b] mb-6"></p>
+                    <button onclick="resetQuiz()" class="btn-gold px-8 py-3 rounded-lg font-bold">重新測驗</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center mt-20">
+        <p>&copy; 2025 清朝歷史數位學習網 - 寓教於樂</p>
+    </footer>
+
+    <script>
+        // Tab switching logic
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        // Quiz Data
+        const quizData = [
+            { q: "清朝統治中國內地共多少年？", a: ["168年", "268年", "368年"], c: 1 },
+            { q: "哪位皇帝在位61年，平三藩並收復台灣？", a: ["雍正", "康熙", "乾隆"], c: 1 },
+            { q: "「攤丁入畝」與「耗羨歸公」是哪位皇帝的改革？", a: ["康熙", "雍正", "嘉慶"], c: 1 },
+            { q: "清朝最具代表性的滿漢融合大宴稱作？", a: ["萬壽宴", "鹿鳴宴", "滿漢全席"], c: 2 },
+            { q: "清朝晚期引進機器鑄造的銀幣常被稱為？", a: ["交子", "龍洋", "開元通寶"], c: 1 },
+            { q: "哪一部清代小說被譽為古典小說的巔峰？", a: ["三國演義", "水滸傳", "紅樓夢"], c: 2 },
+            { q: "清朝的大額交易主要使用什麼？", a: ["紙鈔", "銀兩", "銅錢"], c: 1 },
+            { q: "清朝末代皇帝是誰？", a: ["光緒", "同治", "溥儀"], c: 2 },
+            { q: "鴉片戰爭爆發於哪位皇帝在位期間？", a: ["道光", "咸豐", "光緒"], c: 0 },
+            { q: "京劇起源於乾隆年間的什麼活動？", a: ["祭天大典", "徽班進京", "秋獮"], c: 1 }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const quizContent = document.getElementById('quiz-content');
+            const data = quizData[currentQuestion];
+            
+            quizContent.innerHTML = `
+                <div class="mb-6">
+                    <span class="text-sm text-gray-500">問題 ${currentQuestion + 1} / 10</span>
+                    <h3 class="text-xl font-bold mt-2">${data.q}</h3>
+                </div>
+                <div class="space-y-3">
+                    ${data.a.map((opt, i) => `
+                        <button onclick="handleAnswer(${i})" class="w-full text-left p-4 rounded-lg border-2 border-gray-200 hover:border-[#c0a16b] hover:bg-[#fdfaf6] transition">
+                            ${opt}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function handleAnswer(choice) {
+            if (choice === quizData[currentQuestion].c) {
+                score++;
+            }
+            
+            currentQuestion++;
+            
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('quiz-content').classList.add('hidden');
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+            document.getElementById('score-text').innerText = `得分：${score * 10} / 100`;
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-content').classList.remove('hidden');
+            document.getElementById('quiz-result').classList.add('hidden');
+            loadQuestion();
+        }
+
+        // Initialize quiz
+        loadQuestion();
+    </script>
+</body>
+</html>
